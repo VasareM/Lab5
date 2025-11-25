@@ -26,7 +26,6 @@ public class WeatherService extends Service {
                 while ((line = reader.readLine()) != null) json.append(line);
                 reader.close();
 
-                // send broadcast
                 Intent broadcast = new Intent("weather_data_loaded");
                 broadcast.putExtra("json", json.toString());
                 broadcast.putExtra("place", "Vilnius");

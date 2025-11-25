@@ -21,7 +21,7 @@ public class ForecastAdapter extends ArrayAdapter<ForecastItem> {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        ForecastItem item = getItem(position);  // Now returns ForecastItem
+        ForecastItem item = getItem(position);
 
         if (convertView == null) {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.forecast_item, parent, false);

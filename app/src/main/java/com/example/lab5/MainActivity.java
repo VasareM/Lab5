@@ -8,6 +8,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -112,6 +113,7 @@ public class MainActivity extends AppCompatActivity implements DataLoader.Callba
     }
 
     private void onFilterTextChanged(String query) {
+        Log.d("MainActivity", "onFilterTextChanged called with query: " + query);
         List<ForecastItem> filtered = new ArrayList<>();
         for (ForecastItem item : allItems) {
             if (query.isEmpty() || item.getForecastTimeUtc().toLowerCase().contains(query.toLowerCase())) {
@@ -122,5 +124,6 @@ public class MainActivity extends AppCompatActivity implements DataLoader.Callba
         adapter.addAll(filtered);
         adapter.notifyDataSetChanged();
     }
+
 
 }
