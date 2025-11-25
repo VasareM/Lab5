@@ -2,6 +2,9 @@ package com.example.lab5;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.style.ForegroundColorSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,13 +34,17 @@ public class ForecastAdapter extends ArrayAdapter<ForecastItem> {
 
         String details = item.getAirTemperature() + "°C | feels: " + item.getFeelsLikeTemperature() +
                 "°C | wind " + item.getWindSpeed() + " m/s";
+        SpannableString spannable = new SpannableString(details);
 
-        tvDetails.setText(details);
+        int end = String.valueOf(item.getAirTemperature()).length();
+        if (item.getAirTemperature() < 0) {
+            spannable.setSpan(new ForegroundColorSpan(Color.BLUE), 0, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        } else if (item.getAirTemperature() > 0) {
+            spannable.setSpan(new ForegroundColorSpan(Color.RED), 0, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        }
 
-        // Only temperature changes color
-        if (item.getAirTemperature() < 0) tvDetails.setTextColor(Color.BLUE);
-        else if (item.getAirTemperature() >= 20) tvDetails.setTextColor(Color.RED);
-        else tvDetails.setTextColor(Color.BLACK);
+        tvDetails.setText(spannable);
+
 
         return convertView;
     }

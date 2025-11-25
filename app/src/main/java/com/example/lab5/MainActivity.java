@@ -113,11 +113,14 @@ public class MainActivity extends AppCompatActivity implements DataLoader.Callba
 
     private void onFilterTextChanged(String query) {
         List<ForecastItem> filtered = new ArrayList<>();
-        for (ForecastItem item : allItems)
-            if (item.getForecastTimeUtc().toLowerCase().contains(query.toLowerCase()))
+        for (ForecastItem item : allItems) {
+            if (query.isEmpty() || item.getForecastTimeUtc().toLowerCase().contains(query.toLowerCase())) {
                 filtered.add(item);
+            }
+        }
         adapter.clear();
         adapter.addAll(filtered);
         adapter.notifyDataSetChanged();
     }
+
 }
