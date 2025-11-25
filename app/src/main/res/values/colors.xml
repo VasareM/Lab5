@@ -2,4 +2,11 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="bckg_color">#FBF2FF</color>
+    <color name="Light_accent_color">#F1D5FF</color>
+    <color name="accent_color">#EDC4FF</color>
+    <color name="intensive_color">#DD85FF</color>
+    <color name="strong_color">#C952FF</color>
+    <color name="darker_color">#9554B3</color>
+    <color name="darkest_color">#620E83</color>
 </resources>

@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">Lab5</string>
+    <string name="app_name">WeatherApp</string>
+    <string name="tvStatus_news">Nothing new</string>
+    <string name="use_async_switch">Use async</string>
+    <string name="get_data">Get data!</string>
+    <string name="filter_hint">Filter by date/time or leave empty</string>
+    <string name="header_name">Weather Data App</string>
+    <string name="date_format">YYYY-MM-DD hh:mm</string>
+    <string name="info_format">temp (°C) | feels like temp (°C) | conditions | wind (m/s)</string>
 </resources>
