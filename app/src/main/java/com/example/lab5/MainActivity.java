@@ -4,6 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -62,7 +63,8 @@ public class MainActivity extends AppCompatActivity implements DataLoader.Callba
         });
 
         swUseAsync.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            swUseAsync.getThumbDrawable().setTint(isChecked ? 0xFF00FF00 : 0xFFFFFFFF);
+            int color = getResources().getColor(R.color.strong_color);
+            swUseAsync.getThumbDrawable().setTint(isChecked ? color : Color.WHITE);
         });
     }
 
